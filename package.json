@@ -1,0 +1,65 @@
+{
+  "name": "mcp-github-issue",
+  "version": "0.1.0",
+  "description": "An MCP server that provides LLMs with the ability to use GitHub issues as tasks",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "mcp-github-issue": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "watch": "tsc -w",
+    "serve": "node build/index.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "bump": "npx -y standard-version --skip.tag && git add . ; git commit -m 'chore: bump version' ; git push",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammcj/mcp-github-issue.git"
+  },
+  "keywords": [
+    "mcp",
+    "github",
+    "issues",
+    "tasks",
+    "llm",
+    "ai",
+    "sammcj",
+    "smcleod"
+  ],
+  "author": {
+    "name": "Sam McLeod",
+    "url": "https://smcleod.net"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sammcj/mcp-github-issue/issues"
+  },
+  "homepage": "https://github.com/sammcj/mcp-github-issue#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@octokit/rest": "^21.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "8.18.2",
+    "@typescript-eslint/parser": "8.18.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
