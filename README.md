@@ -3,6 +3,8 @@
 
 An MCP server that provides LLMs with the ability to use GitHub issues as the task to complete. This server allows LLMs to fetch GitHub issue details and use them as task descriptions.
 
+<a href="https://glama.ai/mcp/servers/enk3b2bcjr"><img width="380" height="200" src="https://glama.ai/mcp/servers/enk3b2bcjr/badge" alt="GitHub Issue Server MCP server" /></a>
+
 ## Installation
 
 ### Installing via Smithery
