@@ -1,10 +1,18 @@
 # MCP GitHub Issue Server
+[![smithery badge](https://smithery.ai/badge/mcp-github-issue)](https://smithery.ai/protocol/mcp-github-issue)
 
 [![smithery badge](https://smithery.ai/badge/mcp-github-issue)](https://smithery.ai/server/mcp-github-issue)
 
 An MCP server that provides LLMs with the ability to use GitHub issues as the task to complete. This server allows LLMs to fetch GitHub issue details and use them as task descriptions.
 
+<a href="https://glama.ai/mcp/servers/enk3b2bcjr"><img width="380" height="200" src="https://glama.ai/mcp/servers/enk3b2bcjr/badge" alt="GitHub Issue Server MCP server" /></a>
+
 ## Installation
+
+### Manual Installation
+```bash
+npx mcp-github-issue
+```
 
 ### Installing via Smithery
 
@@ -12,11 +20,6 @@ To install MCP GitHub Issue Server for Claude Desktop automatically via [Smither
 
 ```bash
 npx -y @smithery/cli install mcp-github-issue --client claude
-```
-
-### Manual Installation
-```bash
-npx -y mcp-github-issue
 ```
 
 ## Usage
@@ -30,7 +33,7 @@ Add to your MCP configuration:
   "mcpServers": {
     "github-issue": {
       "command": "npx",
-      "args": ["-y", "mcp-github-issue"]
+      "args": ["mcp-github-issue"]
     }
   }
 }
