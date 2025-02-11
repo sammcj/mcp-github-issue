@@ -87,6 +87,7 @@ Fetches GitHub issue details to use as a task.
 
 - Fetches GitHub issue details from public repositories
 - No authentication required for public repositories
+- Uses a ([GitHub auth token](https://github.com/settings/tokens/new?description=mcp-githb-issue&scopes=repo)) to fetch details from private repositories
 - Returns structured task data including title, description, and source URL
 - Compatible with the Model Context Protocol (MCP)
 

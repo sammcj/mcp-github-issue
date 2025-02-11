@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { config } from "dotenv";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -11,6 +12,8 @@ import { Octokit } from "@octokit/rest";
 import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+
+config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -41,8 +44,8 @@ class GitHubIssueServer {
       },
     );
 
-    // Initialize Octokit without auth for public repos
-    this.octokit = new Octokit();
+    const authToken = process.env.GITHUB_AUTH_TOKEN;
+    this.octokit = new Octokit(authToken ? { auth: authToken } : {});
 
     this.setupToolHandlers();
 
